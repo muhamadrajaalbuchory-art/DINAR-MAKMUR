@@ -1,0 +1,1543 @@
+/* ===================================================================
+   RAJA MINYAK - STYLESHEET RESMI
+   Tema: Penjualan Minyak (Grosir, Ritel, & Industri)
+   Semua class dan ID menggunakan penamaan 'Raja'
+   Responsif untuk Mobile, Tablet, dan Desktop
+   =================================================================== */
+
+/* --- VARIABEL WARNA & TEMA RAJA --- */
+:root {
+  --raja-primary: #d97706;        /* Golden Amber - Warna Minyak Murni */
+  --raja-primary-hover: #b45309;  /* Deep Amber */
+  --raja-primary-light: #fef3c7;  /* Soft Golden Cream */
+  --raja-secondary: #059669;      /* Emerald Green - Simbol Nabati Sehat */
+  --raja-secondary-light: #d1fae5;
+  --raja-accent: #ea580c;         /* Orange Segar */
+  --raja-dark: #111827;           /* Hitam Modern */
+  --raja-dark-soft: #1f2937;
+  --raja-gray-bg: #f8fafc;        /* Latar Belakang Bersih */
+  --raja-gray-card: #ffffff;
+  --raja-gray-border: #e2e8f0;
+  --raja-text-main: #334155;
+  --raja-text-muted: #64748b;
+  --raja-text-light: #94a3b8;
+  --raja-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --raja-shadow-md: 0 6px 16px rgba(217, 119, 6, 0.12);
+  --raja-shadow-lg: 0 14px 28px rgba(0, 0, 0, 0.08);
+  --raja-radius-sm: 8px;
+  --raja-radius-md: 12px;
+  --raja-radius-lg: 20px;
+  --raja-radius-full: 9999px;
+  --raja-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --raja-font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* --- RESET & DASAR --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body.raja-body {
+  font-family: var(--raja-font-family);
+  background-color: var(--raja-gray-bg);
+  color: var(--raja-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--raja-transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+/* --- KONTAINER RAJA --- */
+.raja-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* --- TOMBOL RAJA --- */
+.raja-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--raja-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--raja-transition);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.raja-btn-primary {
+  background: linear-gradient(135deg, var(--raja-primary) 0%, var(--raja-primary-hover) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.raja-btn-primary:hover {
+  background: linear-gradient(135deg, var(--raja-primary-hover) 0%, #92400e 100%);
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.4);
+  transform: translateY(-2px);
+}
+
+.raja-btn-secondary {
+  background-color: var(--raja-secondary);
+  color: #ffffff;
+}
+
+.raja-btn-secondary:hover {
+  background-color: #047857;
+  transform: translateY(-2px);
+}
+
+.raja-btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--raja-primary);
+  color: var(--raja-primary);
+}
+
+.raja-btn-outline:hover {
+  background-color: var(--raja-primary);
+  color: #ffffff;
+}
+
+.raja-btn-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.raja-btn-lg {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+}
+
+.raja-btn-block {
+  width: 100%;
+}
+
+/* --- BADGE RAJA --- */
+.raja-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--raja-radius-full);
+}
+
+.raja-badge-gold {
+  background-color: var(--raja-primary-light);
+  color: var(--raja-primary-hover);
+}
+
+.raja-badge-green {
+  background-color: var(--raja-secondary-light);
+  color: var(--raja-secondary);
+}
+
+.raja-badge-red {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* --- TOPBAR RAJA --- */
+.raja-topbar {
+  background-color: var(--raja-dark);
+  color: #cbd5e1;
+  font-size: 0.825rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.raja-topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.raja-topbar-left, .raja-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.raja-topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.raja-topbar-item span.raja-icon-amber {
+  color: var(--raja-primary);
+}
+
+/* --- NAVBAR HEADER RAJA --- */
+header.raja-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: var(--raja-shadow-sm);
+  transition: var(--raja-transition);
+}
+
+header.raja-header.raja-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.raja-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.raja-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.raja-brand-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--raja-radius-full);
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+  border: 2px solid #fde68a;
+  background-color: #ffffff;
+  transition: var(--raja-transition);
+}
+
+.raja-brand:hover .raja-brand-logo-img {
+  transform: scale(1.06);
+}
+
+.raja-brand-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--raja-primary) 0%, var(--raja-primary-hover) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);
+}
+
+.raja-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.raja-brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--raja-dark);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.raja-brand-title span.raja-text-gold {
+  color: var(--raja-primary);
+}
+
+.raja-brand-tagline {
+  font-size: 0.72rem;
+  color: var(--raja-text-muted);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.raja-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.raja-nav-link {
+  font-weight: 600;
+  color: var(--raja-text-main);
+  font-size: 0.95rem;
+  position: relative;
+  padding: 6px 0;
+}
+
+.raja-nav-link:hover,
+.raja-nav-link.raja-active {
+  color: var(--raja-primary);
+}
+
+.raja-nav-link.raja-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--raja-primary);
+  border-radius: var(--raja-radius-full);
+}
+
+.raja-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.raja-cart-trigger {
+  position: relative;
+  background-color: var(--raja-primary-light);
+  color: var(--raja-primary-hover);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--raja-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--raja-transition);
+}
+
+.raja-cart-trigger:hover {
+  background-color: var(--raja-primary);
+  color: #ffffff;
+}
+
+.raja-cart-badge-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--raja-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.raja-mobile-toggle {
+  display: none;
+  background: none;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--raja-radius-md);
+  align-items: center;
+  justify-content: center;
+  color: var(--raja-dark);
+  border: 1px solid var(--raja-gray-border);
+}
+
+/* --- HERO SECTION RAJA --- */
+.raja-hero {
+  position: relative;
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 50%, #fef3c7 100%);
+  padding: 80px 0 100px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--raja-gray-border);
+}
+
+.raja-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.raja-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #ffffff;
+  border: 1px solid #fde68a;
+  border-radius: var(--raja-radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--raja-primary-hover);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.08);
+}
+
+.raja-hero-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--raja-dark);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.raja-hero-title span.raja-highlight {
+  color: var(--raja-primary);
+  position: relative;
+}
+
+.raja-hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--raja-text-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+
+.raja-hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.raja-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+.raja-stat-box h4 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--raja-dark);
+}
+
+.raja-stat-box h4 span.raja-stat-plus {
+  color: var(--raja-primary);
+}
+
+.raja-stat-box p {
+  font-size: 0.825rem;
+  color: var(--raja-text-muted);
+  font-weight: 500;
+}
+
+.raja-hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.raja-hero-card-main {
+  background: #ffffff;
+  border-radius: var(--raja-radius-lg);
+  padding: 30px;
+  box-shadow: var(--raja-shadow-lg);
+  border: 1px solid var(--raja-gray-border);
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+.raja-hero-oil-illustration {
+  width: 100%;
+  height: 280px;
+  background: radial-gradient(circle at center, #fef3c7 0%, #fff7ed 70%);
+  border-radius: var(--raja-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.raja-oil-drop-art {
+  font-size: 120px;
+  filter: drop-shadow(0 15px 25px rgba(217, 119, 6, 0.3));
+  animation: rajaFloat 4s ease-in-out infinite;
+}
+
+@keyframes rajaFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.raja-floating-tag {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 12px 18px;
+  border-radius: var(--raja-radius-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--raja-gray-border);
+}
+
+.raja-tag-left {
+  left: -20px;
+  top: 40px;
+}
+
+.raja-tag-right {
+  right: -20px;
+  bottom: 50px;
+}
+
+.raja-tag-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--raja-primary-light);
+  color: var(--raja-primary-hover);
+  border-radius: var(--raja-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.raja-tag-info h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--raja-dark);
+}
+
+.raja-tag-info p {
+  font-size: 0.75rem;
+  color: var(--raja-secondary);
+  font-weight: 600;
+}
+
+/* --- SEKSI UMUM RAJA --- */
+.raja-section {
+  padding: 80px 0;
+}
+
+.raja-section-alt {
+  background-color: #ffffff;
+}
+
+.raja-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 50px;
+}
+
+.raja-section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--raja-dark);
+  margin-top: 8px;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.raja-section-desc {
+  font-size: 1rem;
+  color: var(--raja-text-muted);
+}
+
+/* --- GRID LAYOUT RAJA --- */
+.raja-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.raja-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.raja-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* --- KARTU FITUR KEUNGGULAN RAJA --- */
+.raja-feature-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: var(--raja-radius-lg);
+  border: 1px solid var(--raja-gray-border);
+  box-shadow: var(--raja-shadow-sm);
+  transition: var(--raja-transition);
+}
+
+.raja-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--raja-shadow-md);
+  border-color: #fde68a;
+}
+
+.raja-feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--raja-primary-light);
+  color: var(--raja-primary);
+  border-radius: var(--raja-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.raja-feature-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--raja-dark);
+  margin-bottom: 10px;
+}
+
+.raja-feature-desc {
+  font-size: 0.9rem;
+  color: var(--raja-text-muted);
+  line-height: 1.6;
+}
+
+/* --- KARTU PRODUK RAJA --- */
+.raja-product-card {
+  background-color: #ffffff;
+  border-radius: var(--raja-radius-lg);
+  border: 1px solid var(--raja-gray-border);
+  overflow: hidden;
+  box-shadow: var(--raja-shadow-sm);
+  transition: var(--raja-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.raja-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--raja-shadow-md);
+  border-color: #fcd34d;
+}
+
+.raja-product-img-box {
+  position: relative;
+  height: 210px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.raja-product-badge-float {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
+.raja-product-emoji {
+  font-size: 80px;
+  filter: drop-shadow(0 8px 12px rgba(217, 119, 6, 0.25));
+  transition: var(--raja-transition);
+}
+
+.raja-product-card:hover .raja-product-emoji {
+  transform: scale(1.1);
+}
+
+.raja-product-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.raja-product-cat {
+  font-size: 0.75rem;
+  color: var(--raja-primary-hover);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.raja-product-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--raja-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.raja-product-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f59e0b;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.raja-product-rating span.raja-rating-text {
+  color: var(--raja-text-muted);
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+.raja-product-desc {
+  font-size: 0.85rem;
+  color: var(--raja-text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.raja-product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--raja-gray-border);
+}
+
+.raja-product-price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.raja-price-volume {
+  font-size: 0.75rem;
+  color: var(--raja-text-light);
+}
+
+.raja-price-amount {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--raja-primary-hover);
+}
+
+.raja-add-cart-btn {
+  background-color: var(--raja-primary);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--raja-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--raja-transition);
+}
+
+.raja-add-cart-btn:hover {
+  background-color: var(--raja-primary-hover);
+  transform: scale(1.08);
+}
+
+/* --- BANNER PROMO RAJA --- */
+.raja-promo-banner {
+  background: linear-gradient(135deg, var(--raja-dark) 0%, #1e293b 100%);
+  color: #ffffff;
+  border-radius: var(--raja-radius-lg);
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--raja-shadow-lg);
+}
+
+.raja-promo-banner::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.raja-promo-content {
+  max-width: 650px;
+  position: relative;
+  z-index: 2;
+}
+
+.raja-promo-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.raja-promo-desc {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-bottom: 28px;
+}
+
+/* --- FILTER TABS RAJA --- */
+.raja-filter-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.raja-filter-btn {
+  padding: 10px 22px;
+  border-radius: var(--raja-radius-full);
+  background-color: #ffffff;
+  border: 1px solid var(--raja-gray-border);
+  color: var(--raja-text-main);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--raja-transition);
+}
+
+.raja-filter-btn:hover,
+.raja-filter-btn.raja-filter-active {
+  background-color: var(--raja-primary);
+  color: #ffffff;
+  border-color: var(--raja-primary);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+}
+
+/* --- SEARCH BAR RAJA --- */
+.raja-search-container {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.raja-search-input {
+  width: 100%;
+  padding: 14px 20px 14px 48px;
+  border-radius: var(--raja-radius-full);
+  border: 1px solid var(--raja-gray-border);
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  box-shadow: var(--raja-shadow-sm);
+  transition: var(--raja-transition);
+}
+
+.raja-search-input:focus {
+  border-color: var(--raja-primary);
+  box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.15);
+}
+
+.raja-search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--raja-text-light);
+  font-size: 18px;
+}
+
+/* --- TESTIMONIAL RAJA --- */
+.raja-testimonial-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: var(--raja-radius-lg);
+  border: 1px solid var(--raja-gray-border);
+  box-shadow: var(--raja-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.raja-testi-quote {
+  font-size: 0.95rem;
+  color: var(--raja-text-main);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.raja-testi-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.raja-testi-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--raja-radius-full);
+  background-color: var(--raja-primary-light);
+  color: var(--raja-primary-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.raja-testi-meta h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--raja-dark);
+}
+
+.raja-testi-meta p {
+  font-size: 0.78rem;
+  color: var(--raja-text-muted);
+}
+
+/* --- ACCORDION FAQ RAJA --- */
+.raja-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.raja-accordion-item {
+  background-color: #ffffff;
+  border: 1px solid var(--raja-gray-border);
+  border-radius: var(--raja-radius-md);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: var(--raja-transition);
+}
+
+.raja-accordion-item.raja-accordion-open {
+  border-color: var(--raja-primary);
+  box-shadow: var(--raja-shadow-sm);
+}
+
+.raja-accordion-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--raja-dark);
+  font-size: 1.05rem;
+  user-select: none;
+}
+
+.raja-accordion-icon {
+  font-size: 1.25rem;
+  color: var(--raja-primary);
+  transition: transform 0.3s ease;
+}
+
+.raja-accordion-item.raja-accordion-open .raja-accordion-icon {
+  transform: rotate(180deg);
+}
+
+.raja-accordion-body {
+  padding: 0 24px 20px;
+  color: var(--raja-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: none;
+}
+
+.raja-accordion-item.raja-accordion-open .raja-accordion-body {
+  display: block;
+}
+
+/* --- FORM KONTAK RAJA --- */
+.raja-contact-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: var(--raja-radius-lg);
+  border: 1px solid var(--raja-gray-border);
+  box-shadow: var(--raja-shadow-md);
+}
+
+.raja-form-group {
+  margin-bottom: 20px;
+}
+
+.raja-form-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--raja-dark);
+  margin-bottom: 8px;
+}
+
+.raja-form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--raja-radius-md);
+  border: 1px solid var(--raja-gray-border);
+  background-color: #ffffff;
+  color: var(--raja-text-main);
+  transition: var(--raja-transition);
+}
+
+.raja-form-control:focus {
+  border-color: var(--raja-primary);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+textarea.raja-form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* --- TABEL GROSIR RAJA --- */
+.raja-table-wrap {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: var(--raja-radius-lg);
+  border: 1px solid var(--raja-gray-border);
+  box-shadow: var(--raja-shadow-sm);
+}
+
+.raja-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.raja-table th {
+  background-color: #fffbeb;
+  padding: 16px 20px;
+  font-weight: 700;
+  color: var(--raja-dark);
+  border-bottom: 2px solid #fde68a;
+  font-size: 0.9rem;
+}
+
+.raja-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--raja-gray-border);
+  font-size: 0.9rem;
+}
+
+.raja-table tr:hover td {
+  background-color: #fefce8;
+}
+
+/* --- ARTIKEL RAJA --- */
+.raja-article-card {
+  background-color: #ffffff;
+  border-radius: var(--raja-radius-lg);
+  border: 1px solid var(--raja-gray-border);
+  overflow: hidden;
+  box-shadow: var(--raja-shadow-sm);
+  transition: var(--raja-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.raja-article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--raja-shadow-md);
+}
+
+.raja-article-img-box {
+  height: 200px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+}
+
+.raja-article-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.raja-article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--raja-text-muted);
+  margin-bottom: 10px;
+}
+
+.raja-article-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--raja-dark);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.raja-article-snippet {
+  font-size: 0.88rem;
+  color: var(--raja-text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* --- KERANJANG MODAL RAJA --- */
+.raja-cart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.raja-cart-modal.raja-modal-open {
+  display: flex;
+}
+
+.raja-cart-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.raja-cart-drawer {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  animation: rajaSlideLeft 0.3s ease;
+}
+
+@keyframes rajaSlideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.raja-cart-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--raja-gray-border);
+}
+
+.raja-cart-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--raja-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.raja-cart-close {
+  background: none;
+  font-size: 24px;
+  color: var(--raja-text-muted);
+  cursor: pointer;
+  transition: var(--raja-transition);
+}
+
+.raja-cart-close:hover {
+  color: #dc2626;
+}
+
+.raja-cart-items-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+}
+
+.raja-cart-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--raja-text-muted);
+}
+
+.raja-cart-empty-icon {
+  font-size: 60px;
+  margin-bottom: 14px;
+  opacity: 0.6;
+}
+
+.raja-cart-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--raja-gray-border);
+  align-items: center;
+}
+
+.raja-cart-item-icon {
+  width: 54px;
+  height: 54px;
+  background-color: var(--raja-primary-light);
+  border-radius: var(--raja-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.raja-cart-item-info {
+  flex-grow: 1;
+}
+
+.raja-cart-item-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--raja-dark);
+  margin-bottom: 4px;
+}
+
+.raja-cart-item-price {
+  font-size: 0.85rem;
+  color: var(--raja-primary-hover);
+  font-weight: 700;
+}
+
+.raja-cart-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.raja-qty-btn {
+  width: 24px;
+  height: 24px;
+  background-color: var(--raja-gray-bg);
+  border: 1px solid var(--raja-gray-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--raja-transition);
+}
+
+.raja-qty-btn:hover {
+  background-color: var(--raja-primary-light);
+  color: var(--raja-primary-hover);
+}
+
+.raja-cart-del-btn {
+  background: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+}
+
+.raja-cart-footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--raja-gray-border);
+  background-color: #fafafa;
+}
+
+.raja-cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.raja-cart-total-label {
+  font-weight: 700;
+  color: var(--raja-text-main);
+  font-size: 1.05rem;
+}
+
+.raja-cart-total-value {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--raja-primary-hover);
+}
+
+/* --- TOAST NOTIFIKASI RAJA --- */
+.raja-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--raja-dark);
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: var(--raja-radius-md);
+  box-shadow: var(--raja-shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1100;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.raja-toast.raja-toast-show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.raja-toast-success {
+  border-left: 4px solid var(--raja-secondary);
+}
+
+.raja-toast-icon {
+  font-size: 20px;
+}
+
+/* --- FOOTER RAJA --- */
+footer.raja-footer {
+  background-color: var(--raja-dark);
+  color: #94a3b8;
+  padding-top: 70px;
+  border-top: 4px solid var(--raja-primary);
+}
+
+.raja-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.raja-footer-brand-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.raja-footer-brand-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.raja-footer-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.raja-footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--raja-primary);
+}
+
+.raja-footer-links-list li {
+  margin-bottom: 10px;
+}
+
+.raja-footer-links-list a {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.raja-footer-links-list a:hover {
+  color: var(--raja-primary);
+  padding-left: 6px;
+}
+
+.raja-footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.raja-footer-contact-item span.raja-icon {
+  color: var(--raja-primary);
+}
+
+.raja-footer-bottom {
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.raja-footer-bottom a {
+  color: var(--raja-primary);
+}
+
+/* ===================================================================
+   RESPONSIF MOBILE & TABLET (MEDIA QUERIES)
+   =================================================================== */
+
+@media (max-width: 1024px) {
+  .raja-hero-title {
+    font-size: 2.6rem;
+  }
+  .raja-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .raja-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .raja-topbar {
+    display: none; /* Sembunyikan topbar pada layar hp agar ringkas */
+  }
+
+  .raja-navbar {
+    height: 70px;
+  }
+
+  .raja-mobile-toggle {
+    display: flex;
+  }
+
+  .raja-nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 24px;
+    gap: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--raja-primary);
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease;
+    z-index: 99;
+  }
+
+  .raja-nav-menu.raja-mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .raja-hero {
+    padding: 50px 0 60px;
+  }
+
+  .raja-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .raja-hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .raja-hero-cta-group {
+    justify-content: center;
+  }
+
+  .raja-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .raja-hero-card-main {
+    max-width: 100%;
+  }
+
+  .raja-floating-tag {
+    position: static;
+    margin-top: 14px;
+    justify-content: center;
+  }
+
+  .raja-grid-3, .raja-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .raja-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .raja-footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .raja-promo-banner {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .raja-promo-title {
+    font-size: 1.6rem;
+  }
+
+  .raja-contact-box {
+    padding: 24px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .raja-hero-title {
+    font-size: 1.85rem;
+  }
+  .raja-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .raja-hero-stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .raja-cart-drawer {
+    max-width: 100%;
+  }
+}
